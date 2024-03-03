@@ -1,8 +1,7 @@
 {
-  "name": "@svinod-030/pre-commit-hooks",
-  "version": "1.0.0",
+  "name": "pre-commit-hooks-vin",
+  "version": "1.0.1",
   "description": "run npm scripts on files to be committed",
-  "main": "index.js",
   "scripts": {
     "test": "test"
   },
@@ -22,7 +21,5 @@
     "url": "https://github.com/svinod-030/pre-commit-hooks/issues"
   },
   "homepage": "https://github.com/svinod-030/pre-commit-hooks#readme",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  }
+  "registry-url": "https://registry.npmjs.org/"
 }
