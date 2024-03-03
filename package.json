@@ -1,0 +1,28 @@
+{
+  "name": "@svinod-030/pre-commit-hooks",
+  "version": "1.0.0",
+  "description": "run npm scripts on files to be committed",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/svinod-030/pre-commit-hooks.git"
+  },
+  "keywords": [
+    "typescript",
+    "javascript",
+    "git",
+    "opensource"
+  ],
+  "author": "vinodsigadana030@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/svinod-030/pre-commit-hooks/issues"
+  },
+  "homepage": "https://github.com/svinod-030/pre-commit-hooks#readme",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  }
+}
