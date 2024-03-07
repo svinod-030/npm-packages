@@ -1,13 +1,13 @@
 {
-  "name": "test",
-  "version": "0.0.1",
+  "name": "vin-test",
+  "version": "0.0.2",
   "description": "run npm scripts on files to be committed",
   "scripts": {
     "test": "test"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/svinod-030/npm.git"
+    "url": "https://github.com/svinod-030/npm-packages.git"
   },
   "keywords": [
     "typescript",
@@ -18,8 +18,9 @@
   "author": "vinodsigadana030@gmail.com",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/svinod-030/pre-commit-hooks/issues"
+    "url": "https://github.com/svinod-030/npm-packages/issues"
   },
-  "homepage": "https://github.com/svinod-030/pre-commit-hooks#readme",
-  "registry-url": "https://registry.npmjs.org/"
+  "homepage": "https://github.com/svinod-030/npm-packages#readme",
+  "registry-url": "https://registry.npmjs.org/",
+  "gitHead": "30a4ff6f8971b5d0b9b177aa3891e1fa44583289"
 }
