@@ -1,6 +1,6 @@
 {
   "name": "vin-test",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "run npm scripts on files to be committed",
   "scripts": {
     "test": "test"
