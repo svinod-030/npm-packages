@@ -1,5 +1,5 @@
 {
-  "name": "pre-commit-hooks-vin",
+  "name": "npm-packages",
   "version": "1.0.1",
   "description": "run npm scripts on files to be committed",
   "scripts": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/svinod-030/pre-commit-hooks.git"
+    "url": "https://github.com/svinod-030/npm-packages.git"
   },
   "keywords": [
     "typescript",
@@ -18,9 +18,9 @@
   "author": "vinodsigadana030@gmail.com",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/svinod-030/pre-commit-hooks/issues"
+    "url": "https://github.com/svinod-030/npm-packages/issues"
   },
-  "homepage": "https://github.com/svinod-030/pre-commit-hooks#readme",
+  "homepage": "https://github.com/svinod-030/npm-packages#readme",
   "registry-url": "https://registry.npmjs.org/",
   "dependencies": {},
   "devDependencies": {
