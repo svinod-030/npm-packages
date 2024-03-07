@@ -1,6 +1,6 @@
 {
   "name": "pre-commit-hooks-vin",
-  "version": "1.0.1",
+  "version": "0.0.1",
   "description": "run npm scripts on files to be committed",
   "scripts": {
     "test": "test"
@@ -22,7 +22,6 @@
   },
   "homepage": "https://github.com/svinod-030/pre-commit-hooks#readme",
   "registry-url": "https://registry.npmjs.org/",
-  "dependencies": {},
   "devDependencies": {
     "lerna": "^8.1.2"
   }
