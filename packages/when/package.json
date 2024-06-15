@@ -1,5 +1,5 @@
 {
-  "name": "@sv/when",
+  "name": "sv-when",
   "version": "0.0.9-alpha.0",
   "description": "Call functions conditionally based on the result of a given expression",
   "type": "module",
@@ -7,7 +7,7 @@
   "types": "./src/index.d.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/svinod-030/npm-packages.git"
+    "url": "git+https://github.com/svinod-030/npm-packages.git"
   },
   "files": [
     "src",
@@ -34,5 +34,5 @@
   "scripts": {
     "test": "mocha"
   },
-  "gitHead": "b764fda1072fef567c98264e8c95246de696e3b0"
+  "gitHead": "7c4481d15230c4eb2c693dec463d4bc19f0c29ae"
 }
