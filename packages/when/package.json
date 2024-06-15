@@ -1,6 +1,6 @@
 {
   "name": "when",
-  "version": "0.0.1",
+  "version": "0.0.7",
   "description": "Call functions conditionally based on the result of a given expression",
   "scripts": {
     "test": "test"
