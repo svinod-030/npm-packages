@@ -1,5 +1,5 @@
 {
-  "name": "when",
+  "name": "@sv/when",
   "version": "0.0.8-alpha.0",
   "description": "Call functions conditionally based on the result of a given expression",
   "type": "module",
@@ -33,5 +33,6 @@
   },
   "scripts": {
     "test": "mocha"
-  }
+  },
+  "gitHead": "b764fda1072fef567c98264e8c95246de696e3b0"
 }
