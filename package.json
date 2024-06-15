@@ -2,9 +2,6 @@
   "name": "npm-packages",
   "version": "1.0.1",
   "description": "run npm scripts on files to be committed",
-  "scripts": {
-    "test": "test"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/svinod-030/npm-packages.git"
@@ -22,7 +19,6 @@
   },
   "homepage": "https://github.com/svinod-030/npm-packages#readme",
   "registry-url": "https://registry.npmjs.org/",
-  "dependencies": {},
   "devDependencies": {
     "lerna": "^8.1.2"
   }

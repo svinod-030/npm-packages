@@ -2,13 +2,17 @@
   "name": "when",
   "version": "0.0.7",
   "description": "Call functions conditionally based on the result of a given expression",
-  "scripts": {
-    "test": "test"
-  },
+  "type": "module",
+  "main": "./src/index.js",
+  "types": "./src/index.d.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/svinod-030/npm-packages.git"
   },
+  "files": [
+    "src",
+    "!__tests__"
+  ],
   "keywords": [
     "typescript",
     "javascript",
@@ -21,5 +25,13 @@
     "url": "https://github.com/svinod-030/npm-packages/issues"
   },
   "homepage": "https://github.com/svinod-030/npm-packages#readme",
-  "registry-url": "https://registry.npmjs.org/"
+  "registry-url": "https://registry.npmjs.org/",
+  "devDependencies": {
+    "mocha": "^10.4.0",
+    "chai": "^5.1.1",
+    "sinon": "^18.0.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  }
 }
