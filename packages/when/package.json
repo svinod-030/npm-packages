@@ -3,8 +3,8 @@
   "version": "0.0.12",
   "description": "Call functions conditionally based on the result of a given expression",
   "type": "module",
-  "main": "./src/index.js",
-  "types": "./src/index.d.js",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/svinod-030/npm-packages.git"
@@ -32,6 +32,8 @@
     "sinon": "^18.0.0"
   },
   "scripts": {
+    "build": "tsc",
+    "publish": "lerna publish",
     "test": "mocha"
   },
   "gitHead": "7c4481d15230c4eb2c693dec463d4bc19f0c29ae"
