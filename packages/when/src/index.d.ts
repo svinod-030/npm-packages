@@ -1,6 +1,6 @@
 export type callbackFn = (...args: any[]) => void
 /**
- executes a callback function based on the expression passed
+ executes a callback function based on the given expression (alternative to ternary operator).
 
  @example
  ```
