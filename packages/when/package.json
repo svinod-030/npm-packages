@@ -1,6 +1,6 @@
 {
   "name": "sv-when",
-  "version": "0.0.12-alpha.0",
+  "version": "0.0.12",
   "description": "Call functions conditionally based on the result of a given expression",
   "type": "module",
   "main": "./src/index.js",
