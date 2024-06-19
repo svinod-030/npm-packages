@@ -1,6 +1,6 @@
 export type callbackFn = (...args: any[]) => void
 /**
- Detect whether the terminal supports Unicode.
+ executes a callback function based on the expression passed
 
  @example
  ```
