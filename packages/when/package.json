@@ -4,13 +4,14 @@
   "description": "Call functions conditionally based on the result of a given expression",
   "type": "module",
   "main": "./dist/index.js",
-  "types": "./dist/index.d.js",
+  "types": "./dist/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/svinod-030/npm-packages.git"
   },
   "files": [
-    "src",
+    "dist",
+    "!src",
     "!__tests__"
   ],
   "keywords": [
