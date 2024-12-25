@@ -1,6 +1,6 @@
 {
   "name": "convert-it",
-  "version": "0.0.23",
+  "version": "0.0.24",
   "description": "Unit conversion for various measurements like length, area, volume etc,.",
   "type": "module",
   "main": "./dist/index.js",
@@ -38,5 +38,5 @@
     "publish": "lerna publish",
     "test": "jest "
   },
-  "gitHead": "136fa6b2cb4623aa0769e2527c44a73d07fc6032"
+  "gitHead": "c61223a41697f3c52585c4fd31b241e90e06e0ab"
 }
