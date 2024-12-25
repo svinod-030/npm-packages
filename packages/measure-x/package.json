@@ -1,6 +1,6 @@
 {
   "name": "measure-x",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "Unit conversion for various measurements like length, area, volume etc,.",
   "type": "module",
   "main": "./dist/index.js",
