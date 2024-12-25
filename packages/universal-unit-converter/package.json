@@ -15,6 +15,9 @@
     "!__tests__"
   ],
   "keywords": [
+    "unit",
+    "convert",
+    "measure",
     "typescript",
     "javascript",
     "git",
