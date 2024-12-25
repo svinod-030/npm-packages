@@ -63,18 +63,106 @@ try {
 
 ## Supported Units
 
+### Angle
+- Degrees (`degrees`)
+- Radians (`radians`)
+- Gradians (`gradians`)
+
+### Area
+- Square Millimeters (`square_millimeters`)
+- Square Centimeters (`square_centimeters`)
+- Square_meters (`square_meters`)
+- Hectares (`hectares`)
+- Square Kilometers (`square_kilometers`)
+- Square Inches (`square_inches`)
+- Square Feet (`square_feet`)
+- Square Yards (`square_yards`)
+- Square Miles (`square_miles`)
+- Acres (`acres`)
+
+### Data storage
+- Bits (`bits`)
+- Bytes (`bytes`)
+- Kilobytes (`kilobytes`)
+- Megabytes (`megabytes`)
+- Gigabytes (`gigabytes`)
+- Terabytes (`terabytes`)
+- Petabytes (`petabytes`)
+
+### Energy
+- Joules (`joules`)
+- Calories (`calories`)
+- Kilocalories (`kilocalories`)
+- Watt Hours (`watt_hours`)
+- Kilowatt Hours (`kilowatt_hours`)
+- British thermal unit (`btu`)
+- Electron Volts (`electronvolts`)
+
+### Frequency
+- Hertz (`hertz`)
+- Kilohertz (`kilohertz`)
+- Megahertz (`megahertz`)
+- Gigahertz (`gigahertz`)
+
+### Fuel efficiency
+- Liters per 100 kilometers (`liters_per_100_kilometers`)
+- Miles per gallon (`miles_per_gallon`)
+
 ### Length
+- Millimeters (`millimeters`)
+- Centimeters (`centimeters`)
 - Meters (`meters`)
+- Kilometers (`kilometers`)
 - Inches (`inches`)
 - Feet (`feet`)
-- Kilometers (`kilometers`)
+- Yards (`yards`)
 - Miles (`miles`)
+- Nautical miles (`nautical_miles`)
+- Light years (`light_years`)
+- Astronomical units (`astronomical_units`)
+
+### Power
+- Watts (`watts`)
+- Kilowatts (`kilowatts`)
+- Horsepower (`horsepower`)
+
+### Pressure
+- Pascals (`pascals`)
+- Bar (`bar`)
+- Atmospheres (`atmospheres`)
+- Psi (`psi`)
+- Torr (`torr`)
+
+### Speed
+- Meters per second (`meters_per_second`)
+- Kilometers per hour (`kilometers_per_hour`)
+- Miles per hour (`miles_per_hour`)
+- Knots (`knots`)
+- Mach (`mach`)
+
+### Volume
+- Milliliters (`milliliters`)
+- Liters (`liters`)
+- Cubic_meters (`cubic_meters`)
+- Cups (`cups`)
+- Pints (`pints`)
+- Quarts (`quarts`)
+- Gallons (`gallons`)
+- Imperial gallons (`imperial_gallons`)
+- Teaspoons (`teaspoons`)
+- Tablespoons (`tablespoons`)
+- Barrels (`barrels`)
 
 ### Weight
-- Kilograms (`kilograms`)
+- Milligrams (`milligrams`)
 - Grams (`grams`)
+- Kilograms (`kilograms`)
+- Metric tons (`metric_tons`)
 - Pounds (`pounds`)
 - Ounces (`ounces`)
+- Stones (`stones`)
+- Carats (`carats`)
+- Atomic mass units (`atomic_mass_units`)
 
 ### Temperature
 - Celsius (`Celsius`)
