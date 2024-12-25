@@ -1,17 +1,29 @@
+import {angle} from "./conversion/angle";
+import {weight} from "./conversion/weight";
+import {volume} from "./conversion/volume";
+import {area} from "./conversion/area";
+import {speed} from "./conversion/speed";
+import {pressure} from "./conversion/pressure";
+import {energy} from "./conversion/energy";
+import {power} from "./conversion/power";
+import {data_storage} from "./conversion/data_storage";
+import {fuel_efficiency} from "./conversion/fuel_efficiency";
+import {frequency} from "./conversion/frequency";
+import {length} from "./conversion/length";
+
 export const conversionRates: Record<string, Record<string, number>> = {
-    length: {
-        meters: 1,
-        feet: 3.28084,
-        inches: 39.3701,
-        kilometers: 0.001,
-        miles: 0.000621371,
-    },
-    weight: {
-        kilograms: 1,
-        pounds: 2.20462,
-        ounces: 35.274,
-        grams: 1000,
-    },
+    length,
+    weight,
+    volume,
+    area,
+    speed,
+    pressure,
+    energy,
+    power,
+    data_storage,
+    fuel_efficiency,
+    frequency,
+    angle,
     temperature: {
         Celsius: 1,
         Fahrenheit: 1, // Placeholder, handled separately
