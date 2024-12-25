@@ -1,6 +1,6 @@
 {
   "name": "sv-when",
-  "version": "0.0.27",
+  "version": "0.0.28",
   "description": "Call functions conditionally based on the result of a given expression",
   "type": "module",
   "main": "./dist/index.js",
@@ -38,5 +38,5 @@
     "publish": "lerna publish",
     "test": "jest"
   },
-  "gitHead": "c61223a41697f3c52585c4fd31b241e90e06e0ab"
+  "gitHead": "64985e97952a08fdcbbdfbe26199348b80780122"
 }
