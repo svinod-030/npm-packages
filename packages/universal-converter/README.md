@@ -19,7 +19,7 @@ A simple, chainable, and highly extensible utility for converting between variou
 ## Installation
 
 ```bash
-npm install measure-x
+npm install universal-converter
 ```
 
 ---
@@ -29,7 +29,7 @@ npm install measure-x
 ### Import the Library
 
 ```typescript
-import { convert } from 'measure-x';
+import { convert } from 'universal-converter';
 ```
 
 ### Convert Length
@@ -205,7 +205,7 @@ export const conversionRates: Record<string, Record<string, number>> = {
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-repo/measure-x.git
+   git clone https://github.com/your-repo/universal-converter.git
    ```
 
 2. Install dependencies:
