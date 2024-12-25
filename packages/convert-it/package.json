@@ -1,6 +1,6 @@
 {
   "name": "convert-it",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "description": "Unit conversion for various measurements like length, area, volume etc,.",
   "type": "module",
   "main": "./dist/index.js",
