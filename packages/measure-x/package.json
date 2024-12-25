@@ -38,5 +38,5 @@
     "publish": "lerna publish",
     "test": "jest "
   },
-  "gitHead": "7c4481d15230c4eb2c693dec463d4bc19f0c29ae"
+  "gitHead": "b976c2d22ea577149bbb322e79f31535744113e0"
 }

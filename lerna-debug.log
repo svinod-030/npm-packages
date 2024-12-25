@@ -1,0 +1,6 @@
+56 error Error: Command failed with exit code 128: git push --follow-tags --no-verify --atomic origin main
+56 error remote: Support for password authentication was removed on August 13, 2021.
+56 error remote: Please see https://docs.github.com/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+56 error fatal: Authentication failed for 'https://github.com/svinod-030/npm-packages.git/'
+56 error     at makeError (/Users/admin/WebstormProjects/npm-packages/node_modules/execa/lib/error.js:59:11)
+56 error     at handlePromise (/Users/admin/WebstormProjects/npm-packages/node_modules/execa/index.js:114:26)
