@@ -28,14 +28,15 @@
   "homepage": "https://github.com/svinod-030/npm-packages#readme",
   "registry-url": "https://registry.npmjs.org/",
   "devDependencies": {
-    "chai": "^5.1.1",
-    "mocha": "^10.4.0",
-    "sinon": "^18.0.0"
+    "@types/jest": "^29.5.14",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.5",
+    "typescript": "^5.7.2"
   },
   "scripts": {
     "build": "tsc",
     "publish": "lerna publish",
-    "test": "mocha"
+    "test": "jest"
   },
   "gitHead": "c61223a41697f3c52585c4fd31b241e90e06e0ab"
 }
