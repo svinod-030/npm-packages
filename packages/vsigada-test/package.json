@@ -1,6 +1,6 @@
 {
   "name": "vsigada-test",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "description": "run npm scripts on files to be committed",
   "scripts": {
     "test": "test"
@@ -22,5 +22,5 @@
   },
   "homepage": "https://github.com/svinod-030/npm-packages#readme",
   "registry-url": "https://registry.npmjs.org/",
-  "gitHead": "0229d7b473d67cdfc06a554968ab404894a28213"
+  "gitHead": "136fa6b2cb4623aa0769e2527c44a73d07fc6032"
 }
