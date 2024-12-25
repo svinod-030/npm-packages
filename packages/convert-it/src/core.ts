@@ -1,4 +1,5 @@
 import { conversionRates } from './data';
+import { Convert, ConvertTo } from "./types/converter";
 
 function getCategory(fromUnit: string, toUnit: string): string | null {
     for (const category of Object.keys(conversionRates)) {
@@ -10,7 +11,7 @@ function getCategory(fromUnit: string, toUnit: string): string | null {
     return null;
 }
 
-export function convert(value: number, fromUnit: string, toUnit: string): number {
+function to(value: number, fromUnit: string, toUnit: string): number {
     const category = getCategory(fromUnit, toUnit);
     if (!category) {
         throw new Error(`Incompatible units: ${fromUnit} and ${toUnit}`);
@@ -22,6 +23,18 @@ export function convert(value: number, fromUnit: string, toUnit: string): number
 
     const rates = conversionRates[category];
     return (value * rates[toUnit]) / rates[fromUnit];
+}
+
+function from(value: number, fromUnit: string): ConvertTo {
+    return {
+        to: to.bind(null, value, fromUnit)
+    };
+}
+
+export function convert(value: number): Convert {
+    return {
+        from: from.bind(null, value),
+    };
 }
 
 function convertTemperature(value: number, fromUnit: string, toUnit: string): number {

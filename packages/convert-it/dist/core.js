@@ -11,7 +11,7 @@ function getCategory(fromUnit, toUnit) {
     }
     return null;
 }
-function convert(value, fromUnit, toUnit) {
+function to(value, fromUnit, toUnit) {
     const category = getCategory(fromUnit, toUnit);
     if (!category) {
         throw new Error(`Incompatible units: ${fromUnit} and ${toUnit}`);
@@ -21,6 +21,16 @@ function convert(value, fromUnit, toUnit) {
     }
     const rates = data_1.conversionRates[category];
     return (value * rates[toUnit]) / rates[fromUnit];
+}
+function from(value, fromUnit) {
+    return {
+        to: to.bind(null, value, fromUnit)
+    };
+}
+function convert(value) {
+    return {
+        from: from.bind(null, value),
+    };
 }
 function convertTemperature(value, fromUnit, toUnit) {
     if (fromUnit === toUnit)
