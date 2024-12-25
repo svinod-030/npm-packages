@@ -19,7 +19,7 @@ A simple, chainable, and highly extensible utility for converting between variou
 ## Installation
 
 ```bash
-npm install convert-it
+npm install measure-x
 ```
 
 ---
@@ -29,7 +29,7 @@ npm install convert-it
 ### Import the Library
 
 ```typescript
-import { convert } from 'convert-it';
+import { convert } from 'measure-x';
 ```
 
 ### Convert Length
@@ -205,7 +205,7 @@ export const conversionRates: Record<string, Record<string, number>> = {
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-repo/convert-it.git
+   git clone https://github.com/your-repo/measure-x.git
    ```
 
 2. Install dependencies:
