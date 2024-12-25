@@ -1,0 +1,148 @@
+# Unit Converter Library
+
+A simple, chainable, and highly extensible utility for converting between various units of measurement. Supports length, weight, and temperature conversions with a clean, easy-to-use API.
+
+---
+
+## Features
+
+- **Chainable API:** `convert(value).from(unit).to(unit)`
+- **Supports Multiple Categories:**
+    - Length (meters, inches, feet, kilometers, miles, etc.)
+    - Weight (kilograms, grams, pounds, ounces, etc.)
+    - Temperature (Celsius, Fahrenheit, Kelvin)
+- **Highly Extensible:** Add more unit categories and conversions easily.
+- **Error Handling:** Detects and throws errors for invalid or incompatible unit conversions.
+
+---
+
+## Installation
+
+```bash
+npm install convert-it
+```
+
+---
+
+## Usage
+
+### Import the Library
+
+```typescript
+import { convert } from 'convert-it';
+```
+
+### Convert Length
+```typescript
+const length = convert(30).from('meters').to('inches');
+console.log(`30 meters is equal to ${length} inches.`); // Output: 30 meters is equal to 1181.102 inches.
+```
+
+### Convert Weight
+```typescript
+const weight = convert(5).from('kilograms').to('pounds');
+console.log(`5 kilograms is equal to ${weight} pounds.`); // Output: 5 kilograms is equal to 11.0231 pounds.
+```
+
+### Convert Temperature
+```typescript
+const temp = convert(100).from('Celsius').to('Fahrenheit');
+console.log(`100°C is equal to ${temp}°F.`); // Output: 100°C is equal to 212°F.
+```
+
+### Error Handling
+```typescript
+try {
+  convert(30).from('meters').to('kilograms');
+} catch (error) {
+  console.error(error.message); // Output: Incompatible units: meters and kilograms
+}
+```
+
+---
+
+## Supported Units
+
+### Length
+- Meters (`meters`)
+- Inches (`inches`)
+- Feet (`feet`)
+- Kilometers (`kilometers`)
+- Miles (`miles`)
+
+### Weight
+- Kilograms (`kilograms`)
+- Grams (`grams`)
+- Pounds (`pounds`)
+- Ounces (`ounces`)
+
+### Temperature
+- Celsius (`Celsius`)
+- Fahrenheit (`Fahrenheit`)
+- Kelvin (`Kelvin`)
+
+---
+
+## How It Works
+
+The library uses a chainable structure to define the source unit with `.from()` and the target unit with `.to()`. Internally, it:
+
+1. Matches the source and target units to a category (e.g., length, weight, temperature).
+2. Applies conversion rates or formulas based on the category.
+3. Returns the converted value.
+
+---
+
+## Extending the Library
+
+You can add more unit categories or conversions by modifying the `conversionRates` object in `data.ts`.
+
+### Example: Adding Speed Conversion
+```typescript
+export const conversionRates: Record<string, Record<string, number>> = {
+  speed: {
+    'meters_per_second': 1,
+    'kilometers_per_hour': 3.6,
+    'miles_per_hour': 2.23694,
+  },
+  ...
+};
+```
+
+---
+
+## Development
+
+### Setup
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-repo/convert-it.git
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+### Testing
+
+Run the test suite to ensure functionality:
+
+```bash
+npm test
+```
+
+---
+
+## License
+
+This project is licensed under the MIT License. See the `LICENSE` file for details.
+
+---
+
+## Contributions
+
+Contributions are welcome! Please open an issue or submit a pull request for bug fixes, new features, or enhancements.
+
+
