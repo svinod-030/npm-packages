@@ -1,6 +1,6 @@
 {
   "name": "vsigada-test",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "run npm scripts on files to be committed",
   "scripts": {
     "test": "test"
