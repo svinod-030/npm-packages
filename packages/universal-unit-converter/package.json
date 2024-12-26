@@ -1,6 +1,6 @@
 {
   "name": "universal-unit-converter",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Unit conversion for various measurements like length, area, volume etc,.",
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
