@@ -1,5 +1,5 @@
 {
-  "name": "universal-unit-converter",
+  "name": "convert-it",
   "version": "2.0.0",
   "description": "Unit conversion for various measurements like length, area, volume etc,.",
   "main": "dist/index.cjs.js",
@@ -42,5 +42,5 @@
     "publish": "lerna publish",
     "test": "jest "
   },
-  "gitHead": "2da9ff264e00c10be38e65a12dec45e5ce8a753b"
+  "gitHead": "e7682814d75ed00a8e3cbfed2b1f5b49df801abb"
 }

@@ -19,7 +19,7 @@ A simple, chainable, and highly extensible utility for converting between variou
 ## Installation
 
 ```bash
-npm install universal-unit-converter
+npm install convert-it
 ```
 
 ---
@@ -29,7 +29,7 @@ npm install universal-unit-converter
 ### Import the Library
 
 ```typescript
-import { convert } from 'universal-unit-converter';
+import { convert } from 'convert-it';
 ```
 
 ### Convert Length
@@ -213,7 +213,7 @@ export const conversionRates: Record<string, Record<string, number>> = {
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-repo/universal-unit-converter.git
+   git clone https://github.com/svinod-030/npm-packages.git
    ```
 
 2. Install dependencies:

@@ -5,7 +5,7 @@ export default defineConfig({
     build: {
         lib: {
             entry: 'src/index.ts',
-            name: 'universal-unit-converter',
+            name: 'convert-it',
             fileName: (format) => `index.${format}.js`,
             formats: ['es', 'cjs', 'umd'],
         }
