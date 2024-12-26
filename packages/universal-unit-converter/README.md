@@ -153,6 +153,14 @@ try {
 - Tablespoons (`tablespoons`)
 - Barrels (`barrels`)
 
+### Water Hardness
+- Parts per million (`parts_per_million`)
+- German hardness (`german_hardness`)
+- French hardness (`french_hardness`)
+- English hardness (`english_hardness`)
+- Millival (`millival`)
+- Millimole (`millimole`)
+
 ### Weight
 - Milligrams (`milligrams`)
 - Grams (`grams`)
