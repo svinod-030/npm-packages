@@ -19,7 +19,7 @@ A simple, chainable, and highly extensible utility for converting between variou
 ## Installation
 
 ```bash
-npm install convert-it
+npm install global-unit-converter
 ```
 
 ---
@@ -29,7 +29,7 @@ npm install convert-it
 ### Import the Library
 
 ```typescript
-import { convert } from 'convert-it';
+import { convert } from 'global-unit-converter';
 ```
 
 ### Convert Length

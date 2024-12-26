@@ -1,6 +1,6 @@
 {
   "name": "npm-packages",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "run npm scripts on files to be committed",
   "repository": {
     "type": "git",
