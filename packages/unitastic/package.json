@@ -1,6 +1,6 @@
 {
   "name": "unitastic",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Unit conversion for various measurements like length, area, volume etc,.",
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
