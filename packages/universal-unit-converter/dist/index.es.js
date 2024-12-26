@@ -1,4 +1,4 @@
-const a = {
+const o = {
   degrees: 1,
   radians: 0.0174533,
   gradians: 1.11111
@@ -57,11 +57,11 @@ const a = {
   kilowatt_hours: 277778e-12,
   btu: 947817e-9,
   electronvolts: 6242e15
-}, p = {
+}, h = {
   watts: 1,
   kilowatts: 1e-3,
   horsepower: 134102e-8
-}, h = {
+}, p = {
   bits: 1,
   bytes: 0.125,
   kilobytes: 125e-6,
@@ -78,7 +78,7 @@ const a = {
   kilohertz: 1e-3,
   megahertz: 1e-6,
   gigahertz: 1e-9
-}, y = {
+}, d = {
   millimeters: 1,
   centimeters: 0.1,
   meters: 1e-3,
@@ -90,19 +90,27 @@ const a = {
   nautical_miles: 539957e-12,
   light_years: 1057e-19,
   astronomical_units: 66846e-16
+}, y = {
+  parts_per_million: 1,
+  german_hardness: 0.0562,
+  french_hardness: 0.1,
+  english_hardness: 0.0699,
+  millival: 0.02,
+  millimole: 0.01
 }, n = {
-  length: y,
+  length: d,
   weight: i,
   volume: c,
   area: l,
   speed: u,
   pressure: m,
   energy: _,
-  power: p,
-  data_storage: h,
+  power: h,
+  data_storage: p,
   fuel_efficiency: g,
   frequency: b,
-  angle: a,
+  angle: o,
+  water_hardness: y,
   temperature: {
     Celsius: 1,
     Fahrenheit: 1,
@@ -110,8 +118,8 @@ const a = {
     Kelvin: 1
     // Placeholder, handled separately
   }
-}, q = Object.keys(n), j = Object.values(n).map((e) => Object.keys(e));
-function d(e, r) {
+}, j = Object.keys(n), C = Object.values(n).map((e) => Object.keys(e));
+function f(e, r) {
   for (const s of Object.keys(n)) {
     const t = Object.keys(n[s]);
     if (t.includes(e) && t.includes(r))
@@ -119,26 +127,26 @@ function d(e, r) {
   }
   return null;
 }
-function f(e, r, s) {
-  const t = d(r, s);
+function k(e, r, s) {
+  const t = f(r, s);
   if (!t)
     throw new Error(`Incompatible units: ${r} and ${s}`);
   if (t === "temperature")
-    return w(e, r, s);
-  const o = n[t];
-  return e * o[s] / o[r];
+    return q(e, r, s);
+  const a = n[t];
+  return e * a[s] / a[r];
 }
-function k(e, r) {
+function w(e, r) {
   return {
-    to: f.bind(null, e, r)
+    to: k.bind(null, e, r)
   };
 }
-function C(e) {
+function O(e) {
   return {
-    from: k.bind(null, e)
+    from: w.bind(null, e)
   };
 }
-function w(e, r, s) {
+function q(e, r, s) {
   if (r === s) return e;
   switch (r) {
     case "Celsius":
@@ -152,7 +160,7 @@ function w(e, r, s) {
   }
 }
 export {
-  q as categories,
-  C as convert,
-  j as units
+  j as categories,
+  O as convert,
+  C as units
 };

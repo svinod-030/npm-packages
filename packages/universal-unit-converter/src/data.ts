@@ -10,6 +10,7 @@ import {data_storage} from "./conversion/data_storage";
 import {fuel_efficiency} from "./conversion/fuel_efficiency";
 import {frequency} from "./conversion/frequency";
 import {length} from "./conversion/length";
+import {water_hardness} from "./conversion/water_hardness";
 
 export const conversionRates: Record<string, Record<string, number>> = {
     length,
@@ -24,6 +25,7 @@ export const conversionRates: Record<string, Record<string, number>> = {
     fuel_efficiency,
     frequency,
     angle,
+    water_hardness,
     temperature: {
         Celsius: 1,
         Fahrenheit: 1, // Placeholder, handled separately
