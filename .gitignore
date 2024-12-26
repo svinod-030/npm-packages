@@ -1,3 +1,5 @@
 .envrc
 .idea
 node_modules
+
+lerna-*.log
