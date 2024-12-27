@@ -63,6 +63,16 @@ try {
 
 ## Supported Units
 
+### Acceleration
+- meters_per_second_squared (`meters_per_second_squared`)
+- kilometers_per_second_squared (`kilometers_per_second_squared`)
+- centimeters_per_second_squared (`centimeters_per_second_squared`)
+- feet_per_second_squared (`feet_per_second_squared`)
+- miles_per_second_squared (`miles_per_second_squared`)
+- miles_per_hour_squared (`miles_per_hour_squared`)
+- standard_gravity (`standard_gravity`)
+- galileo (`galileo`)
+
 ### Angle
 - Degrees (`degrees`)
 - Radians (`radians`)

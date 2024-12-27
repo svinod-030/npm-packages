@@ -11,8 +11,10 @@ import {fuel_efficiency} from "./conversion/fuel_efficiency";
 import {frequency} from "./conversion/frequency";
 import {length} from "./conversion/length";
 import {water_hardness} from "./conversion/water_hardness";
+import {acceleration} from "./conversion/acceleration";
 
 export const conversionRates: Record<string, Record<string, number>> = {
+    acceleration,
     length,
     weight,
     volume,

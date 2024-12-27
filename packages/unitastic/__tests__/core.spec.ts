@@ -22,4 +22,9 @@ describe("convert(x)", () => {
 
         expect(convert(1).from('german_hardness').to('parts_per_million')).toBeCloseTo(17.793);
     });
+
+    it('Convert acceleration', () => {
+        expect(convert(1).from('standard_gravity').to('meters_per_second_squared')).toBeCloseTo(9.806);
+        expect(convert(1).from('meters_per_second_squared').to('standard_gravity')).toBeCloseTo(0.1019);
+    });
 });
