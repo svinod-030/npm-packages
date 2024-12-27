@@ -3,6 +3,17 @@
 A simple javascript library for managing feature toggles using environment variables. This library provides a clean and easy-to-use API to enable and disable features in your application based on toggles defined in the environment.
 
 ---
+# Key Features
+1. **Node.js Support:**
+    * Reads toggles from process.env variables.
+2. **Browser Support:**
+  * Loads toggles from a provided configuration or fetches them from an API.
+3. **Runtime Detection:**
+  * Automatically detects the runtime environment (Node.js or browser).
+4. **Logging:**
+  * Debug logs can be enabled or disabled via options.
+
+---
 
 ## Installation
 
@@ -33,9 +44,11 @@ export TOGGLE_NEW_FEATURE=true
 export TOGGLE_BETA_MODE=false
 ```
 
-### 2. Import and Initialize the Manager
+### 2. Initialize the Manager
 
-Use the `init()` function to initialize the FeatureToggleManager. This function must be called before using `enabled()`.
+Use the `init()` function to initialize the FeatureToggleManager. This function must be called before using `enabled()`. Toggles can be loaded from various sources like below.
+
+#### 1. Node.js environment
 
 ```javascript
 const { init, enabled } = require("feature-toggle-js");
@@ -43,7 +56,30 @@ const { init, enabled } = require("feature-toggle-js");
 init();
 ```
 
-### 3. Check Feature Toggles
+#### 2. Preloaded config
+
+```javascript
+const { init, enabled } = require("feature-toggle-js");
+
+const config = {
+    NEW_FEATURE: true,
+    BETA_MODE: false,
+};
+
+init({ config });
+```
+
+#### 3. Fetch config from API
+
+```javascript
+const { init, enabled } = require("feature-toggle-js");
+
+const apiUrl = "https://api.example.com/toggles";
+
+await init({ apiUrl });
+```
+
+### 3. Check Feature Togglesc
 
 Use the `enabled()` function to check whether a feature is enabled.
 
