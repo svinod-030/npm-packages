@@ -28,7 +28,7 @@
   "bugs": {
     "url": "https://github.com/svinod-030/npm-packages/issues"
   },
-  "homepage": "https://github.com/svinod-030/npm-packages#readme",
+  "homepage": "https://github.com/svinod-030/npm-packages/tree/main/packages/unitastic#readme",
   "registry-url": "https://registry.npmjs.org/",
   "devDependencies": {
     "@types/jest": "^29.5.14",
