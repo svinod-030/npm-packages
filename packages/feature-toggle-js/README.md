@@ -1,4 +1,4 @@
-# FeatureToggleManager
+# Feature Toggle Manager
 
 A simple javascript library for managing feature toggles using environment variables. This library provides a clean and easy-to-use API to enable and disable features in your application based on toggles defined in the environment.
 
