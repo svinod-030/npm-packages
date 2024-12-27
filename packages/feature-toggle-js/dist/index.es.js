@@ -47,7 +47,7 @@ const g = class g {
    */
   loadTogglesFromEnvironment() {
     Object.keys(process.env).forEach((e) => {
-      e.startsWith("TOGGLE_") && (this.toggles[e.replace("TOGGLE_", "")] = process.env[e].toLowerCase() === "true" || process.env[e].toLowerCase() === "on");
+      e.startsWith("TOGGLE_") && (this.toggles[e] = process.env[e].toLowerCase() === "true" || process.env[e].toLowerCase() === "on");
     }), this.enableLogging && console.log("Toggles loaded:", this.toggles);
   }
   /**

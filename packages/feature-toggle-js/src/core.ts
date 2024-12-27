@@ -79,7 +79,7 @@ class FeatureToggleManager {
     private loadTogglesFromEnvironment(): void {
         Object.keys(process.env).forEach((key) => {
             if (key.startsWith("TOGGLE_")) {
-                this.toggles[key.replace("TOGGLE_", "")] = (process.env[key].toLowerCase() === "true" || process.env[key].toLowerCase() === "on");
+                this.toggles[key] = (process.env[key].toLowerCase() === "true" || process.env[key].toLowerCase() === "on");
             }
         });
 
