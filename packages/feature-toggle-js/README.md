@@ -48,7 +48,7 @@ export TOGGLE_BETA_MODE=false
 
 Use the `init()` function to initialize the FeatureToggleManager. This function must be called before using `enabled()`. Toggles can be loaded from various sources like below.
 
-#### 1. Node.js environment
+#### 2.1. Node.js environment
 
 ```javascript
 const { init, enabled } = require("feature-toggle-js");
@@ -56,7 +56,7 @@ const { init, enabled } = require("feature-toggle-js");
 init();
 ```
 
-#### 2. Preloaded config
+#### 2.2. Preloaded config
 
 ```javascript
 const { init, enabled } = require("feature-toggle-js");
@@ -69,17 +69,25 @@ const config = {
 init({ config });
 ```
 
-#### 3. Fetch config from API
+#### 2.3. Fetch config from API or local JSON file
 
 ```javascript
 const { init, enabled } = require("feature-toggle-js");
 
-const apiUrl = "https://api.example.com/toggles";
+const apiUrl = "http://localhost:5173/api.json";
 
 await init({ apiUrl });
+
+```
+API response of http://localhost:5173/api.json
+```json
+  {
+   "NEW_FEATURE": true,
+   "BETA_MODE": false
+  }
 ```
 
-### 3. Check Feature Togglesc
+### 3. Check Feature Toggles
 
 Use the `enabled()` function to check whether a feature is enabled.
 
@@ -149,7 +157,7 @@ if (enabled("BETA_MODE")) {
 
 ## Environment Variable Naming Convention
 
-- All feature toggles must be prefixed with `TOGGLE_`.
+- All feature toggles must be prefixed with `TOGGLE_`. This is to differentiate the feature toggles from other project related environment variables.
 - The toggle name should be descriptive and written in uppercase letters with underscores as separators.
 
 Example:

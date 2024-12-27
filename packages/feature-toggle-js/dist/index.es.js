@@ -1,6 +1,6 @@
 var l = Object.defineProperty;
-var r = (n, e, i) => e in n ? l(n, e, { enumerable: !0, configurable: !0, writable: !0, value: i }) : n[e] = i;
-var t = (n, e, i) => r(n, typeof e != "symbol" ? e + "" : e, i);
+var r = (s, e, i) => e in s ? l(s, e, { enumerable: !0, configurable: !0, writable: !0, value: i }) : s[e] = i;
+var t = (s, e, i) => r(s, typeof e != "symbol" ? e + "" : e, i);
 const g = class g {
   constructor(e) {
     t(this, "toggles", {});
@@ -47,7 +47,7 @@ const g = class g {
    */
   loadTogglesFromEnvironment() {
     Object.keys(process.env).forEach((e) => {
-      e.startsWith("TOGGLE_") && (this.toggles[e] = process.env[e].toLowerCase() === "true" || process.env[e].toLowerCase() === "on");
+      e.startsWith("TOGGLE_") && (this.toggles[e] = process.env[e].toLowerCase() === "true");
     }), this.enableLogging && console.log("Toggles loaded:", this.toggles);
   }
   /**
@@ -63,8 +63,8 @@ const g = class g {
   }
 };
 t(g, "instance");
-let s = g;
-const c = s.init.bind(s), d = s.enabled.bind(s);
+let n = g;
+const c = n.init.bind(n), d = n.enabled.bind(n);
 export {
   d as enabled,
   c as init
