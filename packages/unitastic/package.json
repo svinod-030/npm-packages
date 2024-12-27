@@ -1,6 +1,6 @@
 {
   "name": "unitastic",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple, chainable, and highly extensible utility for converting between various units of measurement",
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
