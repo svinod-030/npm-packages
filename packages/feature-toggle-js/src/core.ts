@@ -1,4 +1,4 @@
-type FeatureToggleManagerOptions = {
+export type FeatureToggleManagerOptions = {
     config?: Record<string, boolean>;       // For browser: Preloaded toggles from a config
     apiUrl?: string;                        // For browser: API endpoint to fetch toggles
     enableLogging?: boolean;                // Enable logging for debugging
@@ -107,5 +107,8 @@ class FeatureToggleManager {
     }
 }
 
-export const init = FeatureToggleManager.init.bind(FeatureToggleManager);
-export const enabled = FeatureToggleManager.enabled.bind(FeatureToggleManager);
+type EnabledType = (feature: string) => boolean;
+type InitType = (options?: FeatureToggleManagerOptions) => Promise<void>;
+
+export const init: InitType = FeatureToggleManager.init.bind(FeatureToggleManager);
+export const enabled: EnabledType = FeatureToggleManager.enabled.bind(FeatureToggleManager);
