@@ -4,14 +4,10 @@ A simple javascript library for managing feature toggles using environment varia
 
 ---
 # Key Features
-1. **Node.js Support:**
-    * Reads toggles from process.env variables.
-2. **Browser Support:**
-  * Loads toggles from a provided configuration or fetches them from an API.
-3. **Runtime Detection:**
-  * Automatically detects the runtime environment (Node.js or browser).
-4. **Logging:**
-  * Debug logs can be enabled or disabled via options.
+1. **Node.js Support:** Reads toggles from process.env variables.
+2. **Browser Support:** Loads toggles from a provided configuration or fetches them from an API.
+3. **Runtime Detection:** Automatically detects the runtime environment (Node.js or browser).
+4. **Logging:** Debug logs can be enabled or disabled via options.
 
 ---
 
