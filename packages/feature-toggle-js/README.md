@@ -39,11 +39,11 @@ yarn add feature-toggle-js
 
 ## Getting Started
 
-### 2. Initialize the Manager
+### 1. Initialize the Manager
 
-Use the `init()` function to initialize the FeatureToggleManager. This function must be called before using `enabled()`. Toggles can be loaded from various sources like below.
+Toggle configuration can be loaded multiple ways. Use one of the below options based on your requirement. Use the `init()` function to initialize the FeatureToggleManager. This function must be called before using `enabled()`. Toggles can be loaded from various sources like below.
 
-#### 2.1. Initialize with Environment Variables (Node.js environment)
+#### a. Initialize with Environment Variables (Node.js environment)
 
 Define feature toggles in your environment variables. Use the `TOGGLE_` prefix for all feature toggle keys. The values should be `true` or `false` (case-sensitive).
 
@@ -60,7 +60,7 @@ const { init, enabled } = require("feature-toggle-js");
 init();
 ```
 
-#### 2.2. Initialize with Preloaded Configuration
+#### b. Initialize with Preloaded Configuration
 
 ```javascript
 const { init, enabled } = require("feature-toggle-js");
@@ -73,7 +73,7 @@ const config = {
 init({ config });
 ```
 
-#### 2.3. Initialize with Dynamic API or JSON file path
+#### c. Initialize with Dynamic API or JSON file path
 
 ```javascript
 const { init, enabled } = require("feature-toggle-js");
@@ -91,7 +91,7 @@ API response of http://localhost:5173/api.json
   }
 ```
 
-### 3. Check Feature Toggles
+### 2. Check Feature Toggles
 
 Use the `enabled()` function to check whether a feature is enabled.
 
@@ -107,14 +107,34 @@ if (enabled("NEW_FEATURE")) {
 
 ## API Reference
 
-### `init()`
+```
+init({
+    config?: Record<string, boolean>;
+    apiUrl?: string;
+    enableLogging?: boolean;
+})
+```
 
-Initializes the FeatureToggleManager and loads feature toggles from environment variables. This must be called before using the `enabled()` function.
+Initializes the FeatureToggleManager and loads feature toggles from environment variables or preloaded config or dynamic API. This must be called before using the `enabled()` function.
 
 Example:
 
 ```javascript
 init();
+
+// OR
+
+const toggles = {"TOGGLE_BETA_FEATURE": "true"};
+init({
+    config: toggles
+})
+
+// OR
+
+init({
+    apiUrl: "http://localhost:5347/api.json"
+})
+
 ```
 
 ### `enabled(featureName: string): boolean`
@@ -129,32 +149,6 @@ Example:
 ```javascript
 if (enabled("BETA_MODE")) {
   console.log("Beta mode is enabled.");
-}
-```
-
----
-
-## Example Usage
-
-```javascript
-// Import the manager
-const { init, enabled } = require("feature-toggle-js");
-// import { init, enabled } from "feature-toggle-js";
-
-// Initialize the manager
-init();
-
-// Check toggles
-if (enabled("NEW_FEATURE")) {
-  console.log("The new feature is enabled!");
-} else {
-  console.log("The new feature is disabled.");
-}
-
-if (enabled("BETA_MODE")) {
-  console.log("Beta mode is enabled.");
-} else {
-  console.log("Beta mode is disabled.");
 }
 ```
 
