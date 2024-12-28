@@ -3,11 +3,21 @@
 A simple JavaScript library for managing feature toggles with support for environment variables, preloaded configurations, or dynamic API integration. This library offers a clean and intuitive API to enable and disable features in your application, allowing seamless toggle management across various environments.
 
 ---
-# Key Features
+# Supported platforms
 1. **Node.js Support:** Reads toggles from process.env variables.
 2. **Browser Support:** Loads toggles from a provided configuration or fetches them from an API.
 3. **Runtime Detection:** Automatically detects the runtime environment (Node.js or browser).
-4. **Logging:** Debug logs can be enabled or disabled via options.
+
+---
+
+# Key Features
+
+- **Environment Variable Support**: Easily enable/disable features based on environment-specific toggles.
+- **Preloaded Configuration**: Use a static configuration file to define your toggles.
+- **Dynamic API Integration**: Fetch toggles dynamically from an API for real-time updates.
+- **Lightweight and Fast**: Minimal footprint for high performance.
+- **Intuitive API**: Simplified methods for managing feature toggles.
+- **Logging**: Debug logs can be enabled or disabled via options.
 
 ---
 
@@ -29,7 +39,11 @@ yarn add feature-toggle-js
 
 ## Getting Started
 
-### 1. Set Up Environment Variables
+### 2. Initialize the Manager
+
+Use the `init()` function to initialize the FeatureToggleManager. This function must be called before using `enabled()`. Toggles can be loaded from various sources like below.
+
+#### 2.1. Initialize with Environment Variables (Node.js environment)
 
 Define feature toggles in your environment variables. Use the `TOGGLE_` prefix for all feature toggle keys. The values should be `true` or `false` (case-sensitive).
 
@@ -40,19 +54,13 @@ export TOGGLE_NEW_FEATURE=true
 export TOGGLE_BETA_MODE=false
 ```
 
-### 2. Initialize the Manager
-
-Use the `init()` function to initialize the FeatureToggleManager. This function must be called before using `enabled()`. Toggles can be loaded from various sources like below.
-
-#### 2.1. Node.js environment
-
 ```javascript
 const { init, enabled } = require("feature-toggle-js");
 
 init();
 ```
 
-#### 2.2. Preloaded config
+#### 2.2. Initialize with Preloaded Configuration
 
 ```javascript
 const { init, enabled } = require("feature-toggle-js");
@@ -65,7 +73,7 @@ const config = {
 init({ config });
 ```
 
-#### 2.3. Fetch config from API or local JSON file
+#### 2.3. Initialize with Dynamic API or JSON file path
 
 ```javascript
 const { init, enabled } = require("feature-toggle-js");
@@ -131,6 +139,7 @@ if (enabled("BETA_MODE")) {
 ```javascript
 // Import the manager
 const { init, enabled } = require("feature-toggle-js");
+// import { init, enabled } from "feature-toggle-js";
 
 // Initialize the manager
 init();
@@ -147,6 +156,91 @@ if (enabled("BETA_MODE")) {
 } else {
   console.log("Beta mode is disabled.");
 }
+```
+
+---
+
+## Examples
+
+### Use with React with preloaded config
+
+```javascript
+import React from 'react';
+import { init, enabled } from "feature-toggle-js";
+
+const config = {
+NEW_DASHBOARD: true,
+};
+
+init({config});
+
+
+function App() {
+return (
+    <div>
+        {enabled('NEW_DASHBOARD') ? (
+            <NewDashboard />
+        ) : (
+            <OldDashboard />
+        )}
+    </div>
+);
+}
+
+export default App;
+```
+
+### Use with React with dynamic API
+
+```javascript
+import React from 'react';
+import { init, enabled } from "feature-toggle-js";
+
+const apiUrl = "http://localhost:5173/api.json";
+
+await init({ apiUrl });
+
+function App() {
+    return (
+        <div>
+            {enabled('NEW_DASHBOARD') ? (
+                <NewDashboard />
+            ) : (
+                <OldDashboard />
+            )}
+        </div>
+    );
+}
+
+export default App;
+```
+
+### Use with Express
+
+```javascript
+const express = require('express');
+const { init, enabled } = require("feature-toggle-js");
+
+const app = express();
+const config = {
+BETA_FEATURE: true,
+};
+
+init({config}); // For reading toggles from preloaded configuration
+// init();  // for reading toggles config from environment variables
+// init({apiUrl: "http://localhost:5347/toggles.json"}); // For reading toggles from dynamic api
+
+app.get('/', (req, res) => {
+if (toggles.isEnabled('BETA_FEATURE')) {
+res.send('Beta Feature is enabled!');
+} else {
+res.send('Beta Feature is disabled!');
+}
+});
+
+app.listen(3000, () => {
+console.log('Server is running on port 3000');
+});
 ```
 
 ---
