@@ -1,6 +1,6 @@
 export type FeatureToggleManagerOptions = {
-    config?: Record<string, boolean>;       // For browser: Preloaded toggles from a config
-    apiUrl?: string;                        // For browser: API endpoint to fetch toggles
+    config?: Record<string, boolean>;       // Preloaded toggles from a config
+    apiUrl?: string;                        // API endpoint to fetch toggles
     enableLogging?: boolean;                // Enable logging for debugging
 };
 
