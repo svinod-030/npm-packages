@@ -19,6 +19,12 @@ A simple JavaScript library for managing feature toggles with support for enviro
 - **Intuitive API**: Simplified methods for managing feature toggles.
 - **Logging**: Debug logs can be enabled or disabled via options.
 
+| Method            | Best For                         | Requires Restart? | Dynamic Updates? |
+|------------------|--------------------------------|------------------|------------------|
+| **Env Variables** | Simple toggles                 | ✅ Yes           | ❌ No            |
+| **Config File**   | Small apps, manual control     | ✅ Yes           | ❌ No            |
+| **API Fetching**  | Real-time control, scalable   | ❌ No            | ✅ Yes           |
+
 ---
 
 ## Installation
