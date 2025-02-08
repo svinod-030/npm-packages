@@ -1,6 +1,6 @@
 {
   "name": "unitastic",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "A simple, chainable, and highly extensible utility for converting between various units of measurement",
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
@@ -42,5 +42,5 @@
     "build": "vite build",
     "test": "jest "
   },
-  "gitHead": "721482229023cf8a5eb483ae260d7fbc16ac6f19"
+  "gitHead": "3d8965cab2ad23a6f0be0d964a5cdaf00ac03348"
 }
