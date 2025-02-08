@@ -42,5 +42,5 @@
     "build": "vite build",
     "test": "jest "
   },
-  "gitHead": "b1bb2467d2ed5b901d73850b8b5127322f4ace43"
+  "gitHead": "721482229023cf8a5eb483ae260d7fbc16ac6f19"
 }
