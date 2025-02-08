@@ -13,8 +13,7 @@ describe("feature toggle manager", () => {
         });
 
         it("should throw an error if enabled() is called before init()", () => {
-            // init();
-
+            // init(); // Not calling this
             expect(() => enabled("TEST_FEATURE")).toThrowError(
                 "FeatureToggleManager is not initialized. Call init() first."
             );
