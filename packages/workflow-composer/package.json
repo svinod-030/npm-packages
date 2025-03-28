@@ -1,0 +1,38 @@
+{
+  "name": "workflow-composer",
+  "version": "1.0.15",
+  "description": "A simple and highly extensible utility for managing feature toggles in all javascript applications",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/svinod-030/npm-packages.git"
+  },
+  "files": [
+    "dist",
+    "!src",
+    "!__tests__"
+  ],
+  "keywords": ["async", "workflow", "rollback", "typescript"],
+  "author": "vinodsigadana030@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/svinod-030/npm-packages/issues"
+  },
+  "homepage": "https://github.com/svinod-030/npm-packages/tree/main/packages/workflow-composer#readme",
+  "registry-url": "https://registry.npmjs.org/",
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.5",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.6",
+    "vite-plugin-dts": "^4.4.0"
+  },
+  "scripts": {
+    "build": "vite build",
+    "test": "jest "
+  },
+  "gitHead": "3d8965cab2ad23a6f0be0d964a5cdaf00ac03348"
+}
