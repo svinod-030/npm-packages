@@ -1,6 +1,6 @@
 {
   "name": "workflow-composer",
-  "version": "1.0.15",
+  "version": "1.0.0",
   "description": "A simple and highly extensible utility for managing feature toggles in all javascript applications",
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
@@ -14,7 +14,12 @@
     "!src",
     "!__tests__"
   ],
-  "keywords": ["async", "workflow", "rollback", "typescript"],
+  "keywords": [
+    "async",
+    "workflow",
+    "rollback",
+    "typescript"
+  ],
   "author": "vinodsigadana030@gmail.com",
   "license": "ISC",
   "bugs": {
