@@ -6,19 +6,25 @@ interface Step {
     rollbackFn: RollbackFn;
 }
 
+interface WorkflowComposerOptions {
+    maxIterations?: number;
+}
+
 class WorkflowComposer {
     private steps: Map<string, Step>;
     private context: Record<string, any>;
     private history: string[];
     private isRunning: boolean;
     private runningStep: string | null;
+    private maxIterations: number;
 
-    constructor() {
+    constructor(options: WorkflowComposerOptions = {}) {
         this.steps = new Map<string, Step>();
         this.context = {};
         this.history = [];
         this.isRunning = false;
         this.runningStep = "init";
+        this.maxIterations = options.maxIterations ?? 1000;
     }
 
     addStep(name: string, stepFn: StepFn, rollbackFn: RollbackFn): void {
@@ -31,8 +37,12 @@ class WorkflowComposer {
     async run(): Promise<Record<string, any>> {
         if (this.isRunning) throw new Error("Already running");
         this.isRunning = true;
+        let iterations = 0;
         try {
             while (this.runningStep && this.steps.has(this.runningStep)) {
+                if (iterations++ >= this.maxIterations) {
+                    throw new Error(`Max iterations (${this.maxIterations}) exceeded`);
+                }
                 const step = this.steps.get(this.runningStep)!;
                 this.history.push(this.runningStep);
                 const nextStep = await step.stepFn(this.context);

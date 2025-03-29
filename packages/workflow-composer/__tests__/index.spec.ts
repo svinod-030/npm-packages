@@ -74,4 +74,16 @@ describe('WorkflowComposer', () => {
         await expect(composer.run()).rejects.toThrow('Already running');
         await firstRun; // Ensure first run completes
     });
+
+    test('enforces maxIterations', async () => {
+        const composer = new WorkflowComposer({ maxIterations: 2 });
+        composer.addStep('init', async (ctx) => {
+            ctx.count = (ctx.count || 0) + 1;
+            return 'init'; // Infinite loop
+        }, async (ctx) => {
+            ctx.count--;
+        });
+
+        await expect(composer.run()).rejects.toThrow('Max iterations (2) exceeded');
+    });
 });
