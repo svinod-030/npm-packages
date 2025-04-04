@@ -20,6 +20,8 @@
   "homepage": "https://github.com/svinod-030/npm-packages#readme",
   "registry-url": "https://registry.npmjs.org/",
   "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.14.0",
     "lerna": "^8.1.2"
   }
 }

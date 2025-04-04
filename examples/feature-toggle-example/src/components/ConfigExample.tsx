@@ -1,27 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { init, enabled } from 'feature-toggle-js';
 
+const config = {
+  NEW_FEATURE: true,
+  DARK_MODE: false,
+  BETA_FEATURES: true
+};
+
 const ConfigExample: React.FC = () => {
   const [isInitialized, setIsInitialized] = useState(false);
-  const [configValues, setConfigValues] = useState<Record<string, boolean>>({});
-
+  
+  init({ config, enableLogging: true });
   useEffect(() => {
-    // Initialize with static configuration
-    const config = {
-      NEW_FEATURE: true,
-      DARK_MODE: false,
-      BETA_FEATURES: true
-    };
-
-    // Store config values for display
-    setConfigValues(config);
-    
-    // Initialize feature toggles
-    init({ config });
     setIsInitialized(true);
-    
-    // Log for debugging
-    console.log('Config initialized with:', config);
   }, []);
 
   if (!isInitialized) {
@@ -41,7 +32,7 @@ const ConfigExample: React.FC = () => {
             <div className="text-red-600">✗ New feature is disabled</div>
           )}
           <div className="text-xs text-gray-500 mt-1">
-            Value: {configValues.NEW_FEATURE ? 'true' : 'false'}
+            Value: {config.NEW_FEATURE ? 'true' : 'false'}
           </div>
         </div>
 
@@ -53,7 +44,7 @@ const ConfigExample: React.FC = () => {
             <div className="text-red-600">✗ Dark mode is disabled</div>
           )}
           <div className="text-xs text-gray-500 mt-1">
-            Value: {configValues.DARK_MODE ? 'true' : 'false'}
+            Value: {config.DARK_MODE ? 'true' : 'false'}
           </div>
         </div>
 
@@ -65,7 +56,7 @@ const ConfigExample: React.FC = () => {
             <div className="text-red-600">✗ Beta features are disabled</div>
           )}
           <div className="text-xs text-gray-500 mt-1">
-            Value: {configValues.BETA_FEATURES ? 'true' : 'false'}
+            Value: {config.BETA_FEATURES ? 'true' : 'false'}
           </div>
         </div>
       </div>
@@ -73,7 +64,7 @@ const ConfigExample: React.FC = () => {
       <div className="mt-4 p-4 bg-gray-100 rounded">
         <h3 className="font-semibold mb-2">Configuration Used:</h3>
         <pre className="bg-white p-2 rounded">
-          {JSON.stringify(configValues, null, 2)}
+          {JSON.stringify(config, null, 2)}
         </pre>
       </div>
     </div>

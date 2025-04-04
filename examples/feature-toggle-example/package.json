@@ -1,5 +1,6 @@
 {
   "name": "feature-toggle-example",
+  "type": "module",
   "version": "1.0.0",
   "description": "Example usage of feature-toggle-js in a React application",
   "scripts": {

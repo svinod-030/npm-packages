@@ -13,13 +13,27 @@ class FeatureToggleManager {
         if (options?.enableLogging) {
             this.enableLogging = options.enableLogging;
         }
-
         if (this.isNodeEnvironment()) {
             this.loadTogglesFromEnvironment();
-        } else if (options?.config) {
+        }
+        if (options?.config) {
             this.loadTogglesFromConfig(options.config);
-        } else if (options?.apiUrl) {
+        }
+        if (options?.apiUrl) {
             this.loadTogglesFromApi(options.apiUrl);
+        }
+    }
+
+    /**
+     * Initialize the FeatureToggleManager and load toggles based on the environment.
+     */
+    static async init(options?: FeatureToggleManagerOptions): Promise<void> {
+        if (!this.instance) {
+            this.instance = new FeatureToggleManager(options);
+
+            if (this.instance.enableLogging) {
+                console.log("FeatureToggleManager initialized with toggles:", this.instance.toggles);
+            }
         }
     }
 
@@ -27,15 +41,22 @@ class FeatureToggleManager {
      * Detect if the environment is Node.js.
      */
     private isNodeEnvironment(): boolean {
-        return typeof process !== "undefined" && process.env !== undefined;
+        return typeof process !== "undefined" && 
+            typeof process.env === "object" &&
+            process.env !== null;
     }
-
+    
     /**
      * Load toggles from a configuration object (Browser).
      * @param config - Preloaded configuration object.
      */
     private loadTogglesFromConfig(config: Record<string, boolean>): void {
-        this.toggles = { ...config };
+        // Merge with existing toggles, with config taking precedence
+        this.toggles = { ...this.toggles, ...config };
+        
+        if (this.enableLogging) {
+            console.log("Toggles loaded from config:", this.toggles);
+        }
     }
 
     /**
@@ -49,26 +70,9 @@ class FeatureToggleManager {
                 throw new Error(`Failed to fetch toggles from API: ${response.statusText}`);
             }
             const data: Record<string, boolean> = await response.json();
-            this.toggles = { ...data };
+            this.toggles = { ...this.toggles, ...data };
         } catch (error) {
             console.error("Error fetching toggles from API:", error);
-        }
-    }
-
-    /**
-     * Initialize the FeatureToggleManager and load toggles based on the environment.
-     */
-    static async init(options?: FeatureToggleManagerOptions): Promise<void> {
-        if (!this.instance) {
-            this.instance = new FeatureToggleManager(options);
-
-            if (!this.instance.isNodeEnvironment() && options?.apiUrl) {
-                await this.instance.loadTogglesFromApi(options.apiUrl);
-            }
-
-            if (this.instance.enableLogging) {
-                console.log("FeatureToggleManager initialized with toggles:", this.instance.toggles);
-            }
         }
     }
 
@@ -79,12 +83,17 @@ class FeatureToggleManager {
     private loadTogglesFromEnvironment(): void {
         Object.keys(process.env).forEach((key) => {
             if (key.startsWith("TOGGLE_")) {
-                this.toggles[key] = process.env[key].toLowerCase() === "true";
+                const value = process.env[key];
+                // Store without the TOGGLE_ prefix for consistency
+                const featureName = key.replace("TOGGLE_", "");
+                this.toggles[featureName] = value?.toLowerCase() === "true" || 
+                                          value?.toLowerCase() === "on" || 
+                                          value?.toLowerCase() === "yes";
             }
         });
 
         if (this.enableLogging) {
-            console.log("Toggles loaded:", this.toggles);
+            console.log("Toggles loaded from environment:", this.toggles);
         }
     }
 
@@ -97,7 +106,10 @@ class FeatureToggleManager {
         if (!this.instance) {
             throw new Error("FeatureToggleManager is not initialized. Call init() first.");
         }
-        const isEnabled = !!this.instance.toggles[feature];
+        
+        // Check both with and without the TOGGLE_ prefix (for backward compatibility)
+        const isEnabled = !!this.instance.toggles[feature] || 
+                          !!this.instance.toggles[`TOGGLE_${feature}`];
 
         if (this.instance.enableLogging) {
             console.log(`Feature "${feature}" is ${isEnabled ? "enabled" : "disabled"}`);
