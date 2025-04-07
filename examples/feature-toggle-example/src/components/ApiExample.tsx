@@ -11,7 +11,7 @@ const ApiExample: React.FC = () => {
         // Initialize with API endpoint
         // Note: This is a mock API endpoint. Replace with your actual API endpoint
         await init({ 
-          apiUrl: 'https://api.example.com/feature-toggles',
+          apiUrl: 'http://localhost:4000/api/debug',
           enableLogging: true 
         });
         setIsInitialized(true);
@@ -42,29 +42,29 @@ const ApiExample: React.FC = () => {
       
       <div className="space-y-4">
         <div className="p-4 border rounded">
-          <h3 className="font-semibold">Premium Features</h3>
-          {enabled('PREMIUM_FEATURES') ? (
-            <div className="text-green-600">✓ Premium features are enabled</div>
+          <h3 className="font-semibold">DEBUG MODE</h3>
+          {enabled('DEBUG_MODE') ? (
+            <div className="text-green-600">✓ Debug Mode is enabled</div>
           ) : (
-            <div className="text-red-600">✗ Premium features are disabled</div>
+            <div className="text-red-600">✗ Debug Mode is disabled</div>
           )}
         </div>
 
         <div className="p-4 border rounded">
-          <h3 className="font-semibold">Analytics</h3>
-          {enabled('ANALYTICS') ? (
-            <div className="text-green-600">✓ Analytics are enabled</div>
+          <h3 className="font-semibold">MAINTENANCE MODE</h3>
+          {enabled('MAINTENANCE_MODE') ? (
+            <div className="text-green-600">✓ MAINTENANCE MODE is enabled</div>
           ) : (
-            <div className="text-red-600">✗ Analytics are disabled</div>
+            <div className="text-red-600">✗ MAINTENANCE MODE is disabled</div>
           )}
         </div>
 
         <div className="p-4 border rounded">
-          <h3 className="font-semibold">A/B Test</h3>
-          {enabled('AB_TEST') ? (
-            <div className="text-green-600">✓ A/B test is enabled</div>
+          <h3 className="font-semibold">EXPERIMENTAL</h3>
+          {enabled('EXPERIMENTAL') ? (
+            <div className="text-green-600">✓ EXPERIMENTAL is enabled</div>
           ) : (
-            <div className="text-red-600">✗ A/B test is disabled</div>
+            <div className="text-red-600">✗ EXPERIMENTAL is disabled</div>
           )}
         </div>
       </div>
