@@ -73,7 +73,7 @@ const ApiExample: React.FC = () => {
         <h3 className="font-semibold mb-2">API Configuration:</h3>
         <pre className="bg-white p-2 rounded">
           {JSON.stringify({
-            apiUrl: 'https://api.example.com/feature-toggles',
+            apiUrl: 'http://localhost:4000/api/debug',
             enableLogging: true
           }, null, 2)}
         </pre>
