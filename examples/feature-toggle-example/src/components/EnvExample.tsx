@@ -8,7 +8,7 @@ const EnvExample: React.FC = () => {
   useEffect(() => {
     // Initialize with environment variables
     // Note: Environment variables must be prefixed with TOGGLE_
-    init();
+    init({ enableLogging: true });
     setIsInitialized(true);
     
     // Log environment variables for debugging
@@ -18,7 +18,6 @@ const EnvExample: React.FC = () => {
       TOGGLE_EXPERIMENTAL: process.env.TOGGLE_EXPERIMENTAL
     };
     setEnvValues(envVars);
-    console.log('Environment variables:', envVars);
   }, []);
 
   if (!isInitialized) {

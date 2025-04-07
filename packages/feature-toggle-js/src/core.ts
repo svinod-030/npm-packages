@@ -13,15 +13,7 @@ class FeatureToggleManager {
         if (options?.enableLogging) {
             this.enableLogging = options.enableLogging;
         }
-        if (this.isNodeEnvironment()) {
-            this.loadTogglesFromEnvironment();
-        }
-        if (options?.config) {
-            this.loadTogglesFromConfig(options.config);
-        }
-        if (options?.apiUrl) {
-            this.loadTogglesFromApi(options.apiUrl);
-        }
+        this.loadToggles(options);
     }
 
     /**
@@ -30,10 +22,22 @@ class FeatureToggleManager {
     static async init(options?: FeatureToggleManagerOptions): Promise<void> {
         if (!this.instance) {
             this.instance = new FeatureToggleManager(options);
-
             if (this.instance.enableLogging) {
                 console.log("FeatureToggleManager initialized with toggles:", this.instance.toggles);
             }
+        }
+        this.instance.loadToggles(options);
+    }
+
+    private loadToggles(options: FeatureToggleManagerOptions) {
+        if (this.isNodeEnvironment()) {
+            this.loadTogglesFromEnvironment();
+        }
+        if (options?.config) {
+            this.loadTogglesFromConfig(options.config);
+        }
+        if (options?.apiUrl) {
+            this.loadTogglesFromApi(options.apiUrl);
         }
     }
 
@@ -108,8 +112,10 @@ class FeatureToggleManager {
         }
         
         // Check both with and without the TOGGLE_ prefix (for backward compatibility)
-        const isEnabled = !!this.instance.toggles[feature] || 
-                          !!this.instance.toggles[`TOGGLE_${feature}`];
+        console.log("toggles in enabled - ", this.instance.toggles);
+        const isEnabled = !!this.instance.toggles[feature];
+                          // || 
+                          // !!this.instance.toggles[`TOGGLE_${feature}`];
 
         if (this.instance.enableLogging) {
             console.log(`Feature "${feature}" is ${isEnabled ? "enabled" : "disabled"}`);

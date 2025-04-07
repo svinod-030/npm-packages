@@ -10,9 +10,10 @@ const config = {
 const ConfigExample: React.FC = () => {
   const [isInitialized, setIsInitialized] = useState(false);
   
-  init({ config, enableLogging: true });
   useEffect(() => {
-    setIsInitialized(true);
+    init({ config, enableLogging: true }).then(() => {
+      setIsInitialized(true);
+    });
   }, []);
 
   if (!isInitialized) {
